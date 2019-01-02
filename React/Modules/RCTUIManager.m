@@ -434,6 +434,7 @@ static NSDictionary *deviceOrientationEventBody(UIDeviceOrientation orientation)
         [(id<RCTInvalidating>)subview invalidate];
       }
       [registry removeObjectForKey:subview.reactTag];
+      [self.delegate didDeregisteredView:subview.reactTag];
     });
   }
 }
